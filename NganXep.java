@@ -3,7 +3,6 @@ package nganXep;
 import java.util.Scanner;
 
 class Node {
-    //
     int data;
     Node next;
 
@@ -202,33 +201,36 @@ class myStack {
             push(a);
         }
     }
+    void xoaX(){
+        
+    }
 }
 
 public class NganXep {
 
     public static void main(String[] args) {
         myStack m = new myStack();
-//        m.push(3);
-//        m.push(2);
-//        m.push(7);
-//        m.push(6);
-//        m.push(9);
-//        while (!m.EmptyS()) {
-//            System.out.println(m.pop() + " ");
-//        }
+       m.push(3);
+       m.push(2);
+       m.push(7);
+       m.push(6);
+       m.push(9);
+       while (!m.EmptyS()) {
+           System.out.println(m.pop() + " ");
+       }
         m.nhap();
         m.in();
 
-//        System.out.println("Số phần tử lẻ trong ngăn xếp: " + m.demLe());
-//
-//        m.timMax();
-//        System.out.println("Ngăn xếp sau khi xoá cuối: ");
-//        m.xoaCuoi();
-//        m.in();
-//
-//        System.out.println("Ngăn xếp sau khi thêm cuối: ");
-//        m.themCuoi();
-//        m.in();
+       System.out.println("Số phần tử lẻ trong ngăn xếp: " + m.demLe());
+
+       m.timMax();
+       System.out.println("Ngăn xếp sau khi xoá cuối: ");
+       m.xoaCuoi();
+       m.in();
+
+       System.out.println("Ngăn xếp sau khi thêm cuối: ");
+       m.themCuoi();
+       m.in();
         
         System.out.println("Ngăn xếp sau khi thêm: ");
         m.themX();
