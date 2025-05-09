@@ -3,8 +3,10 @@ package nganXep;
 import java.util.Scanner;
 
 class Node {
+
     int data;
     Node next;
+
     Node(int x) {
         data = x;
         next = null;
@@ -158,6 +160,20 @@ class myStack {
         }
     }
 
+    void themcuoi2() {
+        myStack t = new myStack();
+        int x = 111;
+
+        while (!EmptyS()) {
+            t.push(pop());
+        }
+        push(x);
+        while (!t.EmptyS()) {
+            push(t.pop());
+        }
+
+    }
+
     void themCuoi() {
         myStack t = new myStack();
         System.out.print("Nhập phần tử muốn thêm: ");
@@ -179,6 +195,27 @@ class myStack {
         push(a);
     }
 
+    void themX2() {
+        System.out.print("Nhập phần tử muốn thêm vào ngăn xếp: ");
+        int x = sc.nextInt();
+        System.out.print("Nhập vị trí muốn thêm vào ngăn xếp: ");
+        int k = sc.nextInt();
+
+        myStack t = new myStack();
+        int dem = 1;
+        while (!EmptyS()) {
+            t.push(pop());
+            if (dem == k) {
+                break;
+            }
+            dem++;
+        }
+        push(x);
+        while (!t.EmptyS()) {
+            push(t.pop());
+        }
+    }
+
     void themX() {
         System.out.print("Nhập phần tử muốn thêm vào ngăn xếp: ");
         int x = sc.nextInt();
@@ -191,43 +228,52 @@ class myStack {
             int a = pop();
             t.push(a);
         }
-        while(!t.EmptyS()){
+        while (!t.EmptyS()) {
             int a = t.pop();
             dem++;
-            if(dem == k){
+            if (dem == k) {
                 push(x);
             }
             push(a);
         }
     }
-    void xoaX(){
-        
+
+    void xoaX() {
+
     }
 }
 
 public class NganXep {
+
     public static void main(String[] args) {
         myStack m = new myStack();
-    //    m.push(3);
-    //    m.push(2);
-    //    m.push(7);
-    //    m.push(6);
-    //    m.push(9);
-    //    while (!m.EmptyS()) {
-    //        System.out.println(m.pop() + " ");
-    //    }
+        //    m.push(3);
+        //    m.push(2);
+        //    m.push(7);
+        //    m.push(6);
+        //    m.push(9);
+        //    while (!m.EmptyS()) {
+        //        System.out.println(m.pop() + " ");
+        //    }
         m.nhap();
         m.in();
-       System.out.println("Số phần tử lẻ trong ngăn xếp: " + m.demLe());
-       m.timMax();
-       System.out.println("Ngăn xếp sau khi xoá cuối: ");
-       m.xoaCuoi();
-       m.in();
-       System.out.println("Ngăn xếp sau khi thêm cuối: ");
-       m.themCuoi();
-       m.in();
+//        System.out.println("Số phần tử lẻ trong ngăn xếp: " + m.demLe());
+//        m.timMax();
+//        System.out.println("Ngăn xếp sau khi xoá cuối: ");
+//        m.xoaCuoi();
+//        m.in();
+//        System.out.println("Ngăn xếp sau khi thêm cuối: ");
+//        m.themCuoi();
+//        m.in();
+//        System.out.println("Ngăn xếp sau khi thêm: ");
+//        m.themX();
+//        m.in();
         System.out.println("Ngăn xếp sau khi thêm: ");
-        m.themX();
+        m.themX2();
         m.in();
+
+//        System.out.println("Ngăn xếp sau khi thêm cuối: ");
+//        m.themcuoi2();
+//        m.in();
     }
 }
